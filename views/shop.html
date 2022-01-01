@@ -5,13 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .main-header{
+            width: 100%;
+            height: 3.5rem;
+            background-color: rgb(231, 245, 36);
+            padding: 0 1.5rem;
+        }
+
+        .main-header__nav{
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .main-header__item-list{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+        }
+
+        .main-header__item{
+            margin: 0 1.5rem;
+            padding: 0;
+        }
+
+        .main-header__item{
+            text-decoration: none;
+            color: white;
+        }
+
+        .main-header__item a:hover,
+        .main-header__item a:active,
+        .main-header__item a.active{
+            color: rgb(51, 96, 148);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Shop</a></li>
-                <li><a href="/admin/add-product">Product</a></li>
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><a href="/">Shop</a></li>
+                <li class="main-header__item"><a href="/admin/add-product">Product</a></li>
             </ul>
         </nav>
     </header>
