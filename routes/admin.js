@@ -23,5 +23,5 @@ router.post('/add-product', (req, res, next) => {
 // module.exports = router;
 
 // Ini untuk import lebih dari satu
-module.router = router;
-module.products = products;
+exports.router = router;
+exports.products = products;
