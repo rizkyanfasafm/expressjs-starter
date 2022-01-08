@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => {
     // Get path completely until routes
     // res.sendFile(path.join(rootDir, 'views', 'shop.html'));
 
-    res.render('shop', {prods: products, docTitle: 'My Shop'});
+    res.render('shop', {prods: products, pageTitle: 'My Shop', path: '/'});
 });
 
 module.exports = router;
