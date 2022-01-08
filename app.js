@@ -7,7 +7,10 @@ const app = express();
 
 
 // Handlebars Configuration
-app.engine('handlebars', expressHbs());
+app.engine('handlebars', expressHbs({
+    layoutsDir: 'views/layouts/',
+    defaultLayout: 'main-layout'
+}));
 app.set('view engine', 'handlebars');
 app.set('views', 'views');
 
