@@ -9,7 +9,8 @@ const p = path.join(
 );
 
 const getProductFromFile = (cb) => {
-  // Will be read fil
+  // Callback as function
+  // Will be read file
   fs.readFile(p, (err, fileContent) => {
     //   If error it indicates that file is not found or empty, so we'll return callback empty array
     if (err) {
@@ -43,6 +44,8 @@ module.exports = class Product {
   }
 
   static fetchAll(cb) {
+    // This is use callback to wait result form getProductFromFile method
+    // Callback as argument
     getProductFromFile(cb);
   }
 };

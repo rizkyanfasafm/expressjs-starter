@@ -1,6 +1,4 @@
-const Product = require('../models/product');
-
-// const products = [];
+const Product = require("../models/product");
 
 exports.getAddProduct = (req, res, next) => {
   // res.sendFile(path.join(rootDir, 'views', 'add-product.html'));
@@ -23,17 +21,14 @@ exports.postAddProduct = (req, res, next) => {
 };
 
 exports.getProducts = (req, res, next) => {
-  // console.log(products);
-  // Get path completely until routes
-  // res.sendFile(path.join(rootDir, 'views', 'shop.html'));
-
   Product.fetchAll((products) => {
-    res.render("shop/product-list", {
+
+    // Using Anonymous function
+    // Using callback (sync)
+    res.render("admin/product-list", {
       prods: products,
-      pageTitle: "My Shop",
-      path: "/",
-      hasProducts: products.length > 0,
-      activeShop: true,
+      pageTitle: "Admin Products",
+      path: "/admin/product-list",
     });
   });
 };
