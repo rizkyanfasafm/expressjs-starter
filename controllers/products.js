@@ -1,4 +1,6 @@
-const products = [];
+const Product = require('../models/product');
+
+// const products = [];
 
 exports.getAddProduct = (req, res, next) => {
   // res.sendFile(path.join(rootDir, 'views', 'add-product.html'));
@@ -12,9 +14,11 @@ exports.getAddProduct = (req, res, next) => {
 };
 
 exports.postAddProduct = (req, res, next) => {
-  products.push({
-    title: req.body.title,
-  });
+  const product = new Product(res.body.title);
+  product.save();
+  // products.push({
+  //   title: req.body.title,
+  // });
   res.redirect("/");
 };
 
@@ -23,6 +27,8 @@ exports.getProducts = (req, res, next) => {
   // Get path completely until routes
   // res.sendFile(path.join(rootDir, 'views', 'shop.html'));
 
+  const products = Product.fetchAll();
+  console.log(products);
   res.render("shop", {
     prods: products,
     pageTitle: "My Shop",
