@@ -14,7 +14,7 @@ exports.getAddProduct = (req, res, next) => {
 };
 
 exports.postAddProduct = (req, res, next) => {
-  const product = new Product(res.body.title);
+  const product = new Product(req.body.title);
   product.save();
   // products.push({
   //   title: req.body.title,
@@ -28,7 +28,6 @@ exports.getProducts = (req, res, next) => {
   // res.sendFile(path.join(rootDir, 'views', 'shop.html'));
 
   const products = Product.fetchAll();
-  console.log(products);
   res.render("shop", {
     prods: products,
     pageTitle: "My Shop",
