@@ -12,7 +12,11 @@ exports.getAddProduct = (req, res, next) => {
 };
 
 exports.postAddProduct = (req, res, next) => {
-  const product = new Product(req.body.title);
+  const title = req.body.title;
+  const imageURL = req.body.imageURL;
+  const price = req.body.price;
+  const description = req.body.description;
+  const product = new Product(title, imageURL, price, description);
   product.save();
   // products.push({
   //   title: req.body.title,
@@ -22,7 +26,6 @@ exports.postAddProduct = (req, res, next) => {
 
 exports.getProducts = (req, res, next) => {
   Product.fetchAll((products) => {
-
     // Using Anonymous function
     // Using callback (sync)
     res.render("admin/product-list", {

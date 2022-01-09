@@ -25,9 +25,12 @@ const getProductFromFile = (cb) => {
 
 module.exports = class Product {
   // Every calling class Product we must passing a value
-  constructor(title) {
+  constructor(title, imageURL, price, description) {
     // And this value, will be save in temp memory
     this.title = title;
+    this.imageURL = imageURL;
+    this.price = price;
+    this.description = description;
   }
 
   save() {
