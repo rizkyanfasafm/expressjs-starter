@@ -27,12 +27,13 @@ exports.getProducts = (req, res, next) => {
   // Get path completely until routes
   // res.sendFile(path.join(rootDir, 'views', 'shop.html'));
 
-  const products = Product.fetchAll();
-  res.render("shop", {
-    prods: products,
-    pageTitle: "My Shop",
-    path: "/",
-    hasProducts: products.length > 0,
-    activeShop: true,
+  Product.fetchAll((products) => {
+    res.render("shop", {
+      prods: products,
+      pageTitle: "My Shop",
+      path: "/",
+      hasProducts: products.length > 0,
+      activeShop: true,
+    });
   });
 };
