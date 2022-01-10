@@ -34,6 +34,8 @@ module.exports = class Product {
   }
 
   save() {
+    // Create unique ID
+    this.id = Math.random().toString();
     // If we want save a product, we must get all product from file, therefore we use getProductFromFile method
     getProductFromFile((products) => {
       // We must use callback for wait a process to read file
