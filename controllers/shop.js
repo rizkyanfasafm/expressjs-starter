@@ -20,9 +20,12 @@ exports.getProduct = (req, res, next) => {
   const prodId = req.params.productId;
   Product.findById(prodId, (product) => {
     console.log(product);
+    res.render('shop/product-detail', {
+      product: product,
+      pageTitle: 'Detail ' + product.title,
+      path: '/products'
+    });
   })
-  console.log('tes aja');
-  res.redirect('/');
 }
 
 exports.getIndex = (req, res, next) => {
